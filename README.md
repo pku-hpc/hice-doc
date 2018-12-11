@@ -1,2 +1,4 @@
-# hice-doc
-Documentation of the HICE library
+# HICE
+
+> High-performance intelligent computation engine（HICE）
+
