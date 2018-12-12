@@ -516,58 +516,58 @@ mat2 = mat1;
 </li>
 </ul>
 <h2 id="&#x8BBF;&#x95EE;tensor">&#x8BBF;&#x95EE;Tensor</h2>
-<pre class="language-"><code class="lang-c++">// &#x548C;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x4E2D;&#x5143;&#x7D20;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0B;&#x6807;&#x4EE5;&#x5143;&#x7EC4;&#x5F62;&#x5F0F;&#x7EC4;&#x7EC7;&#xFF0C;&#x9AD8;&#x7EF4;&#x5EA6;&#x5728;&#x524D;&#xFF0C;&#x4F4E;&#x7EAC;&#x5EA6;&#x5728;&#x540E;
-Tensor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>double,2</span><span class="token punctuation">&gt;</span></span> mat(8,8);
-cout&lt;&lt;mat(3,4)&lt;&lt;endl;
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x548C;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x4E2D;&#x5143;&#x7D20;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0B;&#x6807;&#x4EE5;&#x5143;&#x7EC4;&#x5F62;&#x5F0F;&#x7EC4;&#x7EC7;&#xFF0C;&#x9AD8;&#x7EF4;&#x5EA6;&#x5728;&#x524D;&#xFF0C;&#x4F4E;&#x7EAC;&#x5EA6;&#x5728;&#x540E;</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cout<span class="token operator">&lt;&lt;</span><span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
 </code></pre>
 <h2 id="tensor&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;">Tensor&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;</h2>
 <p>Tenesor&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x5305;&#x62EC;Tensor&#x7684;&#x7EF4;&#x5EA6;&#x4E2A;&#x6570;&#xFF0C;&#x6BCF;&#x4E00;&#x7EF4;&#x5EA6;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;&#x7B49;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x8BBF;&#x95EE;&#x65B9;&#x5F0F;&#xFF1A;</p>
 <ul>
 <li><p>&#x76F4;&#x63A5;&#x4ECE;Tensor&#x4E2D;&#x83B7;&#x53D6;</p>
-<pre class="language-"><code class="lang-c++">Tensor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>double,</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span> mat(8, 8);
+<pre class="language-"><code class="lang-cpp">Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// &#x8FD4;&#x56DE;Tensor&#x7684;&#x7EF4;&#x5EA6;
-cout&lt;&lt;mat.rank()&lt;&lt;endl; // 2
+<span class="token comment">// &#x8FD4;&#x56DE;Tensor&#x7684;&#x7EF4;&#x5EA6;</span>
+cout<span class="token operator">&lt;&lt;</span>mat<span class="token punctuation">.</span><span class="token function">rank</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> <span class="token comment">// 2</span>
 
-// &#x8FD4;&#x56DE;Tensor&#x7B2C;i&#x7EF4;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;
-cout&lt;&lt;mat.dim(i)&lt;&lt;endl; // &#x5F53;i=0, &#x8F93;&#x51FA;8
+<span class="token comment">// &#x8FD4;&#x56DE;Tensor&#x7B2C;i&#x7EF4;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;</span>
+cout<span class="token operator">&lt;&lt;</span>mat<span class="token punctuation">.</span><span class="token function">dim</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> <span class="token comment">// &#x5F53;i=0, &#x8F93;&#x51FA;8</span>
 </code></pre>
 </li>
 <li><p>Tensor&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x4E5F;&#x53EF;&#x901A;&#x8FC7;&#x5176;Tensorshape&#x5F97;&#x5230;</p>
-<pre class="language-"><code class="lang-c++">Tensor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>double,</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span> mat(8, 8);
-TensorShape<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int,</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span> shape = mat.shape();
+<pre class="language-"><code class="lang-cpp">Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+TensorShape<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token operator">&gt;</span> shape <span class="token operator">=</span> mat<span class="token punctuation">.</span><span class="token function">shape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// &#x8FD4;&#x56DE;Tensor&#x7684;&#x7EF4;&#x5EA6;
-cout&lt;&lt;shape.rank()&lt;&lt;endl; // 2
+<span class="token comment">// &#x8FD4;&#x56DE;Tensor&#x7684;&#x7EF4;&#x5EA6;</span>
+cout<span class="token operator">&lt;&lt;</span>shape<span class="token punctuation">.</span><span class="token function">rank</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> <span class="token comment">// 2</span>
 
-// &#x8FD4;&#x56DE;Tensor&#x7B2C;i&#x7EF4;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;
-cout&lt;&lt;shape.dim(i)&lt;&lt;endl; // &#x5F53;i=0, &#x8F93;&#x51FA;8
+<span class="token comment">// &#x8FD4;&#x56DE;Tensor&#x7B2C;i&#x7EF4;&#x5143;&#x7D20;&#x7684;&#x4E2A;&#x6570;</span>
+cout<span class="token operator">&lt;&lt;</span>shape<span class="token punctuation">.</span><span class="token function">dim</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> <span class="token comment">// &#x5F53;i=0, &#x8F93;&#x51FA;8</span>
 </code></pre>
 </li>
 </ul>
 <h2 id="&#x6539;&#x53D8;tensor&#x7684;&#x7EF4;&#x5EA6;">&#x6539;&#x53D8;Tensor&#x7684;&#x7EF4;&#x5EA6;</h2>
-<pre class="language-"><code class="lang-c++">// &#x8BBE;&#x76EE;&#x524D;&#x6709;&#x4E00;&#x4E2A;8*8&#x7684;&#x4E8C;&#x7EF4;Tensor
-Tensor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>double,2</span><span class="token punctuation">&gt;</span></span> mat(8,8);
-// &#x73B0;&#x628A;&#x8BE5;Tensor&#x6539;&#x4E3A;16*16
-TensorShape<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>int,2</span><span class="token punctuation">&gt;</span></span> shape = {16,16};
-mat.resize(shape);
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x8BBE;&#x76EE;&#x524D;&#x6709;&#x4E00;&#x4E2A;8*8&#x7684;&#x4E8C;&#x7EF4;Tensor</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x73B0;&#x628A;&#x8BE5;Tensor&#x6539;&#x4E3A;16*16</span>
+TensorShape<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">&gt;</span> shape <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+mat<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span>shape<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="&#x4EE5;&#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;&#x8FD4;&#x56DE;tensor&#x6570;&#x636E;">&#x4EE5;&#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;&#x8FD4;&#x56DE;Tensor&#x6570;&#x636E;</h2>
-<pre class="language-"><code class="lang-c++">// &#x5047;&#x8BBE;&#x5B58;&#x5728;&#x67D0;&#x4E00;&#x5DF2;&#x521D;&#x59CB;&#x5316;Tensor mat
-Tensor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>double,2</span><span class="token punctuation">&gt;</span></span> mat(8,8);
-// &#x521D;&#x59CB;&#x5316;
-....
-// &#x8FD4;&#x56DE;&#x5176;&#x6570;&#x503C;
-double* data = mat.data();
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x5047;&#x8BBE;&#x5B58;&#x5728;&#x67D0;&#x4E00;&#x5DF2;&#x521D;&#x59CB;&#x5316;Tensor mat</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x521D;&#x59CB;&#x5316;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment">// &#x8FD4;&#x56DE;&#x5176;&#x6570;&#x503C;</span>
+<span class="token keyword">double</span><span class="token operator">*</span> data <span class="token operator">=</span> mat<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="tensor&#x7684;&#x4F20;&#x8F93;">Tensor&#x7684;&#x4F20;&#x8F93;</h2>
-<pre class="language-"><code class="lang-c++">Tensor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>double,2</span><span class="token punctuation">&gt;</span></span> mat(8,8);
-// &#x5C06;&#x5F20;&#x91CF;mat&#x4F20;&#x8F93;&#x5230;device&#x4E0A;
-mat.to_device(CUDA);
-// &#x5F97;&#x5230;&#x5F20;&#x91CF;&#x5728;device&#x4E0A;&#x7684;&#x6570;&#x636E;
-double *d_mat = mat.device_data();
-// &#x5C06;&#x5F20;&#x91CF;mat&#x4F20;&#x56DE;&#x5230;host
-mat.to_host();
+<pre class="language-"><code class="lang-cpp">Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x5C06;&#x5F20;&#x91CF;mat&#x4F20;&#x8F93;&#x5230;device&#x4E0A;</span>
+mat<span class="token punctuation">.</span><span class="token function">to_device</span><span class="token punctuation">(</span>CUDA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x5F97;&#x5230;&#x5F20;&#x91CF;&#x5728;device&#x4E0A;&#x7684;&#x6570;&#x636E;</span>
+<span class="token keyword">double</span> <span class="token operator">*</span>d_mat <span class="token operator">=</span> mat<span class="token punctuation">.</span><span class="token function">device_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x5C06;&#x5F20;&#x91CF;mat&#x4F20;&#x56DE;&#x5230;host</span>
+mat<span class="token punctuation">.</span><span class="token function">to_host</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -612,7 +612,7 @@ mat.to_host();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"next":{"title":"3.2. LA模块","level":"1.3.2","depth":2,"path":"part3/la.md","ref":"part3/la.md","articles":[{"title":"3.2.1. Spmspv","level":"1.3.2.1","depth":3,"path":"part3/la/spmspv.md","ref":"part3/la/spmspv.md","articles":[]}]},"previous":{"title":"3.1. CORE模块","level":"1.3.1","depth":2,"path":"part3/core.md","ref":"part3/core.md","articles":[{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"path":"part3/core/tensor.md","ref":"part3/core/tensor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/core/tensor.md","mtime":"2018-12-05T08:52:06.753Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T09:21:01.837Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"next":{"title":"3.2. LA模块","level":"1.3.2","depth":2,"path":"part3/la.md","ref":"part3/la.md","articles":[{"title":"3.2.1. Spmspv","level":"1.3.2.1","depth":3,"path":"part3/la/spmspv.md","ref":"part3/la/spmspv.md","articles":[]}]},"previous":{"title":"3.1. CORE模块","level":"1.3.1","depth":2,"path":"part3/core.md","ref":"part3/core.md","articles":[{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"path":"part3/core/tensor.md","ref":"part3/core/tensor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"katex":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/core/tensor.md","mtime":"2018-12-12T10:10:22.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T10:11:52.879Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
@@ -620,10 +620,6 @@ mat.to_host();
         
     <script src="../../../gitbook/gitbook.js"></script>
     <script src="../../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
