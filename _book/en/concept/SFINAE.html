@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
                 
             
                 
@@ -377,37 +381,37 @@
 <blockquote>
 <p>&#x5B9A;&#x4E49;&#x5728;&#x5934;&#x6587;&#x4EF6;<type_traits>&#x4E2D;&#x3002;</type_traits></p>
 </blockquote>
-<pre><code class="lang-c++"><span class="hljs-comment">// &#x82E5;B&#x4E3A;true&#xFF0C;&#x5219;std::enable_if&#x7684;typedef type&#x4E3A;T</span>
-<span class="hljs-comment">// &#x82E5;B&#x4E3A;false&#xFF0C;&#x5219;std::enable_if&#x7684;typedef type&#x4E3A;void</span>
-<span class="hljs-keyword">template</span>&lt; <span class="hljs-keyword">bool</span> B, <span class="hljs-keyword">class</span> T = <span class="hljs-keyword">void</span> &gt;
-<span class="hljs-keyword">struct</span> enable_if;
+<pre class="language-"><code class="lang-c++">// &#x82E5;B&#x4E3A;true&#xFF0C;&#x5219;std::enable_if&#x7684;typedef type&#x4E3A;T
+// &#x82E5;B&#x4E3A;false&#xFF0C;&#x5219;std::enable_if&#x7684;typedef type&#x4E3A;void
+template&lt; bool B, class T = void &gt;
+struct enable_if;
 </code></pre>
 <p>&#x5728;<code>HICE</code>&#x5E93;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;<code>std::enable_if</code>&#x4E3B;&#x8981;&#x662F;&#x4E3A;&#x4E86;&#x5B8C;&#x6210;&#xFF1A;</p>
 <ul>
 <li>&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;device&#xFF0C;&#x80FD;&#x5728;&#x4E0D;&#x62A5;&#x9519;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5339;&#x914D;&#x5BF9;&#x5E94;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x907F;&#x514D;&#x51FA;&#x73B0;&#x91CD;&#x8F7D;&#x4E8C;&#x4E49;&#x6027;&#x95EE;&#x9898;&#x3002;</li>
 </ul>
 <p>&#xFF0C;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-c++"><span class="hljs-comment">// CPU</span>
-<span class="hljs-keyword">template</span>&lt; DeviceType Td, <span class="hljs-keyword">typename</span> TScalarType,  <span class="hljs-keyword">typename</span> TVec, <span class="hljs-keyword">typename</span> TZeroDimTensor&gt;
-<span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::enable_if&lt;is_same_device&lt;Td, DeviceType::kCPU&gt;::value, <span class="hljs-keyword">void</span>&gt;::<span class="hljs-function">type
-<span class="hljs-title">dotvv</span><span class="hljs-params">(......)</span></span>{
-    <span class="hljs-comment">//......</span>
+<pre class="language-"><code class="lang-c++">// CPU
+template&lt; DeviceType Td, typename TScalarType,  typename TVec, typename TZeroDimTensor&gt;
+typename std::enable_if&lt;is_same_device<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Td,</span> <span class="token attr-name"><span class="token namespace">DeviceType:</span>:kCPU</span><span class="token punctuation">&gt;</span></span>::value, void&gt;::type
+dotvv(......){
+    //......
 }
 
-<span class="hljs-comment">// GPU kernels</span>
-<span class="hljs-keyword">template</span>&lt; DeviceType Td, <span class="hljs-keyword">typename</span> TScalarType,  <span class="hljs-keyword">typename</span> TVec, <span class="hljs-keyword">typename</span> TZeroDimTensor&gt;
-<span class="hljs-keyword">typename</span> <span class="hljs-built_in">std</span>::enable_if&lt;is_same_device&lt;Td, DeviceType::kCUDA&gt;::value, <span class="hljs-keyword">void</span>&gt;::<span class="hljs-function">type
-<span class="hljs-title">dotvv</span><span class="hljs-params">(.......)</span></span>{
-    <span class="hljs-comment">//.......</span>
+// GPU kernels
+template&lt; DeviceType Td, typename TScalarType,  typename TVec, typename TZeroDimTensor&gt;
+typename std::enable_if&lt;is_same_device<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Td,</span> <span class="token attr-name"><span class="token namespace">DeviceType:</span>:kCUDA</span><span class="token punctuation">&gt;</span></span>::value, void&gt;::type
+dotvv(.......){
+    //.......
 }
 </code></pre>
-<p>&#x5F53;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x7684;<code>DeviceType</code>&#x662F;<code>KCUDA</code>&#x65F6;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;<code>is_same_device&lt;Td, DeviceType::kCPU&gt;::value</code>&#x8FD4;&#x56DE;<code>false</code>&#xFF0C;&#x4F7F;&#x5F97;<code>std::enable_if</code>&#x6CA1;&#x6709;<code>type</code>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5BFC;&#x81F4;&#x5339;&#x914D;&#x5931;&#x8D25;&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x5F97;&#x8FD9;&#x4E24;&#x4E2A;&#x540C;&#x540D;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x63A8;&#x5BFC;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#xFF0C;&#x9075;&#x5FAA;SFINAE&#x539F;&#x5219;&#xFF0C;&#x53EF;&#x4EE5;&#x987A;&#x5229;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F7F;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x7EDF;&#x4E00;&#x3002;</p>
+<p>&#x5F53;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x7684;<code>DeviceType</code>&#x662F;<code>KCUDA</code>&#x65F6;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;<code>is_same_device<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Td,</span> <span class="token attr-name"><span class="token namespace">DeviceType:</span>:kCPU</span><span class="token punctuation">&gt;</span></span>::value</code>&#x8FD4;&#x56DE;<code>false</code>&#xFF0C;&#x4F7F;&#x5F97;<code>std::enable_if</code>&#x6CA1;&#x6709;<code>type</code>&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5BFC;&#x81F4;&#x5339;&#x914D;&#x5931;&#x8D25;&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x5F97;&#x8FD9;&#x4E24;&#x4E2A;&#x540C;&#x540D;&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x63A8;&#x5BFC;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#xFF0C;&#x9075;&#x5FAA;SFINAE&#x539F;&#x5219;&#xFF0C;&#x53EF;&#x4EE5;&#x987A;&#x5229;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x3002;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F7F;&#x4EE3;&#x7801;&#x770B;&#x8D77;&#x6765;&#x66F4;&#x7EDF;&#x4E00;&#x3002;</p>
 <p>&#x8FD9;&#x6837;&#x5728;<code>apply</code>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;</p>
-<pre><code class="lang-c++"><span class="hljs-keyword">if</span> (lhs.device().is_cpu()) {
-        engine::dotvv&lt;DeviceType::kCPU, TScalarType3&gt;(lhs, rhs, result);
+<pre class="language-"><code class="lang-c++">if (lhs.device().is_cpu()) {
+        engine::dotvv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">DeviceType:</span>:kCPU,</span> <span class="token attr-name">TScalarType3</span><span class="token punctuation">&gt;</span></span>(lhs, rhs, result);
 } 
-<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lhs.device().is_cuda()) {
-    engine::dotvv&lt;DeviceType::kCUDA, TScalarType3&gt;(lhs, rhs, result);
+else if (lhs.device().is_cuda()) {
+    engine::dotvv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">DeviceType:</span>:kCUDA,</span> <span class="token attr-name">TScalarType3</span><span class="token punctuation">&gt;</span></span>(lhs, rhs, result);
 }
 </code></pre>
 <p>&#x6765;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684;kernel&#x3002;</p>
@@ -455,7 +459,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.2 SFINAE+enable_if","level":"1.6.2","depth":2,"next":{"title":"5.3 Expression Template","level":"1.6.3","depth":2,"ref":"","articles":[]},"previous":{"title":"5.1 Traits","level":"1.6.1","depth":2,"path":"concept/Traits.md","ref":"concept/Traits.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"concept/SFINAE.md","mtime":"2018-12-06T15:56:10.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-11T09:49:29.195Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"5.2 SFINAE+enable_if","level":"1.6.2","depth":2,"next":{"title":"5.3 Expression Template","level":"1.6.3","depth":2,"ref":"","articles":[]},"previous":{"title":"5.1 Traits","level":"1.6.1","depth":2,"path":"concept/Traits.md","ref":"concept/Traits.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"concept/SFINAE.md","mtime":"2018-12-11T09:57:00.107Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T09:21:01.837Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

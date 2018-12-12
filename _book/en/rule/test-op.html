@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
                 
             
                 
@@ -372,13 +376,13 @@
                                 
                                 <h1 id="&#x6D4B;&#x8BD5;&#x81EA;&#x5B9A;&#x4E49;&#x7684;operation">&#x6D4B;&#x8BD5;&#x81EA;&#x5B9A;&#x4E49;&#x7684;operation</h1>
 <p>&#x5728;<code>test/</code>&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x589E;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF0C;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5F15;&#x5165;<code>#include &quot;hice.h&quot;</code>&#x540E;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#xFF0C;&#x5E76;&#x5728;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684;<code>CMakeLists.txt</code>&#x4E2D;&#x589E;&#x52A0;&#x5BF9;&#x8BE5;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x7684;&#x7F16;&#x8BD1;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code># dot_cpu_test&#x4E3A;&#x751F;&#x6210;&#x7684;&#x6D4B;&#x8BD5;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;
+<pre class="language-"><code># dot_cpu_test&#x4E3A;&#x751F;&#x6210;&#x7684;&#x6D4B;&#x8BD5;&#x53EF;&#x6267;&#x884C;&#x7A0B;&#x5E8F;
 # dot_cpu_test.cpp&#x4E3A;&#x6D4B;&#x8BD5;&#x6E90;&#x4EE3;&#x7801;
 add_executable(dot_cpu_test dot_cpu_test.cpp)
 target_link_libraries(dot_cpu_test hice)
 add_test(
   NAME dot_cpu_test
-  COMMAND $&lt;TARGET_FILE:dot_cpu_test&gt;
+  COMMAND $<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">TARGET_FILE:</span>dot_cpu_test</span><span class="token punctuation">&gt;</span></span>
 )
 </code></pre><p>&#x5B8C;&#x6210;&#x4EE5;&#x4E0A;&#x64CD;&#x4F5C;&#xFF0C;&#x5728;<code>build/</code>&#x76EE;&#x5F55;&#x4E0B;&#x91CD;&#x65B0;<code>cmake &amp;&amp; make</code>&#x5373;&#x53EF;&#x3002;</p>
 
@@ -420,7 +424,7 @@ add_test(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"测试自定义operation","level":"1.7.2","depth":2,"previous":{"title":"增加自定义operation","level":"1.7.1","depth":2,"path":"rule/new-op.md","ref":"rule/new-op.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"rule/test-op.md","mtime":"2018-12-06T07:10:10.468Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-11T09:49:29.195Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"测试自定义operation","level":"1.7.2","depth":2,"previous":{"title":"增加自定义operation","level":"1.7.1","depth":2,"path":"rule/new-op.md","ref":"rule/new-op.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"rule/test-op.md","mtime":"2018-12-11T09:57:00.110Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T09:21:01.837Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

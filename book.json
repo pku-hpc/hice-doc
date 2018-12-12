@@ -1,0 +1,18 @@
+{
+    "plugins": ["katex",
+                "prism",
+                "-highlight",
+                "include-codeblock"],
+    "pluginsConfig": {
+        "prism": {
+            "css": [
+                "prismjs/themes/prism.css"
+            ]
+        },
+        "include-codeblock": {
+            "template": "ace",
+            "unindent": true,
+            "edit": false
+        }
+    }
+}
