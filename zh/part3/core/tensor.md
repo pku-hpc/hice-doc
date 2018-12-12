@@ -39,7 +39,7 @@ Tensor<double, 2> mat2({8,8});
 
 ## 访问Tensor
 
-```c++
+```cpp
 // 和访问数组中元素类似，下标以元组形式组织，高维度在前，低纬度在后
 Tensor<double,2> mat(8,8);
 cout<<mat(3,4)<<endl;
@@ -51,7 +51,7 @@ Tenesor的基本信息包括Tensor的维度个数，每一维度元素的个数�
 
 * 直接从Tensor中获取
 
-  ```c++
+  ```cpp
   Tensor<double, 2> mat(8, 8);
   
   // 返回Tensor的维度
@@ -63,7 +63,7 @@ Tenesor的基本信息包括Tensor的维度个数，每一维度元素的个数�
 
 * Tensor的基本信息也可通过其Tensorshape得到
 
-  ```c++
+  ```cpp
   Tensor<double, 2> mat(8, 8);
   TensorShape<int, 2> shape = mat.shape();
   
@@ -76,7 +76,7 @@ Tenesor的基本信息包括Tensor的维度个数，每一维度元素的个数�
 
 ## 改变Tensor的维度
 
-```c++
+```cpp
 // 设目前有一个8*8的二维Tensor
 Tensor<double,2> mat(8,8);
 // 现把该Tensor改为16*16
@@ -86,7 +86,7 @@ mat.resize(shape);
 
 ## 以数组的形式返回Tensor数据
 
-```c++
+```cpp
 // 假设存在某一已初始化Tensor mat
 Tensor<double,2> mat(8,8);
 // 初始化
@@ -97,7 +97,7 @@ double* data = mat.data();
 
 ## Tensor的传输
 
-```c++
+```cpp
 Tensor<double,2> mat(8,8);
 // 将张量mat传输到device上
 mat.to_device(CUDA);
