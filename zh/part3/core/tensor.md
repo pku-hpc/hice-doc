@@ -4,7 +4,7 @@
 
 目前默认创建的Tensor都是稠密类型的。
 
-```c++
+```cpp
 // 创建一个二维的8*8的Tensor
 
 // 方法一：参数代表每一维度Tensor中元素的个数
@@ -18,7 +18,7 @@ Tensor<double, 2> mat2({8,8});
 
 * 拷贝函数
 
-  ```c++
+  ```cpp
   // 假设存在某一已初始化Tensor mat1
   Tensor<double, 2> mat2(8,8);
   // mat2中信息和mat1完全一致
@@ -29,7 +29,7 @@ Tensor<double, 2> mat2({8,8});
 
   也可循环访问Tensor中每一个元素，并对其赋值
 
-  ```c++
+  ```cpp
   for (int row = 0; row < 8; ++row)
       for (int col = 0; col < 8; ++col)
         mat(row, col) = value;
