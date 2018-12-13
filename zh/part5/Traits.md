@@ -4,7 +4,7 @@
 
 在`HICE`库中，主要利用`Traits`正确匹配传入的`Expr`中各参数类型，用一元操作举个例子来说：
 
-```c++
+```cpp
 // UnaryExpr
 template<typename TExpr, typename TUnaryOp>
 struct Traits<UnaryExpr<TExpr, TUnaryOp>> {

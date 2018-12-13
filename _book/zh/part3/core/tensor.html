@@ -138,7 +138,7 @@
                 <a href="../../part2/dependent_lib.html">
             
                     
-                    2.2. 依赖库
+                    2.2. 软硬件依赖
             
                 </a>
             
@@ -147,12 +147,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../part2/lib/cblas.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../../part2/lib/cmake.html">
+            
+                <a href="../../part2/lib/cmake.html">
+            
+                    
+                    2.2.1. cmake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../part2/lib/gcc.html">
+            
+                <a href="../../part2/lib/gcc.html">
+            
+                    
+                    2.2.2. gcc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../part2/lib/cblas.html">
             
                 <a href="../../part2/lib/cblas.html">
             
                     
-                    2.2.1. cblas
+                    2.2.3. cblas
             
                 </a>
             
@@ -160,12 +186,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../../part2/lib/lapack.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="../../part2/lib/lapack.html">
             
                 <a href="../../part2/lib/lapack.html">
             
                     
-                    2.2.2. lapack
+                    2.2.4. lapack
             
                 </a>
             
@@ -173,12 +199,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" data-path="../../part2/lib/cublas.html">
+        <li class="chapter " data-level="1.2.2.5" data-path="../../part2/lib/cublas.html">
             
                 <a href="../../part2/lib/cublas.html">
             
                     
-                    2.2.3. cublas
+                    2.2.5. cublas
             
                 </a>
             
@@ -186,12 +212,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../../part2/lib/cuda.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="../../part2/lib/cuda.html">
             
                 <a href="../../part2/lib/cuda.html">
             
                     
-                    2.2.4. cuda
+                    2.2.6. cuda
             
                 </a>
             
@@ -516,7 +542,7 @@ mat2 <span class="token operator">=</span> mat1<span class="token punctuation">;
 </li>
 </ul>
 <h2 id="&#x8BBF;&#x95EE;tensor">&#x8BBF;&#x95EE;Tensor</h2>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x548C;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x4E2D;&#x5143;&#x7D20;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0B;&#x6807;&#x4EE5;&#x5143;&#x7EC4;&#x5F62;&#x5F0F;&#x7EC4;&#x7EC7;&#xFF0C;&#x9AD8;&#x7EF4;&#x5EA6;&#x5728;&#x524D;&#xFF0C;&#x4F4E;&#x7EAC;&#x5EA6;&#x5728;&#x540E;</span>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x548C;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x4E2D;&#x5143;&#x7D20;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0B;&#x6807;&#x4EE5;&#x5143;&#x7EC4;&#x5F62;&#x5F0F;&#x7EC4;&#x7EC7;&#xFF0C;&#x9AD8;&#x7EF4;&#x5EA6;&#x5728;&#x524D;&#xFF0C;&#x4F4E;&#x7EF4;&#x5EA6;&#x5728;&#x540E;</span>
 Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">&gt;</span> <span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 cout<span class="token operator">&lt;&lt;</span><span class="token function">mat</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
 </code></pre>
@@ -612,7 +638,7 @@ mat<span class="token punctuation">.</span><span class="token function">to_host<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"next":{"title":"3.2. LA模块","level":"1.3.2","depth":2,"path":"part3/la.md","ref":"part3/la.md","articles":[{"title":"3.2.1. Spmspv","level":"1.3.2.1","depth":3,"path":"part3/la/spmspv.md","ref":"part3/la/spmspv.md","articles":[]}]},"previous":{"title":"3.1. CORE模块","level":"1.3.1","depth":2,"path":"part3/core.md","ref":"part3/core.md","articles":[{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"path":"part3/core/tensor.md","ref":"part3/core/tensor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/core/tensor.md","mtime":"2018-12-12T10:17:25.911Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T10:16:41.063Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"next":{"title":"3.2. LA模块","level":"1.3.2","depth":2,"path":"part3/la.md","ref":"part3/la.md","articles":[{"title":"3.2.1. Spmspv","level":"1.3.2.1","depth":3,"path":"part3/la/spmspv.md","ref":"part3/la/spmspv.md","articles":[]}]},"previous":{"title":"3.1. CORE模块","level":"1.3.1","depth":2,"path":"part3/core.md","ref":"part3/core.md","articles":[{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"path":"part3/core/tensor.md","ref":"part3/core/tensor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/core/tensor.md","mtime":"2018-12-12T11:27:34.631Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-13T11:12:03.258Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>

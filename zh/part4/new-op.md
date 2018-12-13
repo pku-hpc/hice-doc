@@ -8,6 +8,6 @@
 - 在`op`的`namespace`中新增自定义`operation`的结构体，该结构体中需定义一个`apply`函数用于选择调用`engine namespace`中定义的合适的`kernel`，定义方法参考[这里](../concept/STINAE.md)。
 - 定义新增自定义`operation`的模板表达式，主要应用了`Expression Template`技术。
 - 定义新增自定义`operation`对应的`Traits`结构体，定义方法参考[这里](../concept/Traits.md)。
-- 针对操作的模板表达式定义对应的`evalutor`。
+- 针对操作的模板表达式定义对应的`evaluator`。
 
 新增头文件和对应operation的名字保持一致，放在指定目录下，定义完成后在`src/hice.h`中`#include`对应操作头文件即可。

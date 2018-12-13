@@ -138,7 +138,7 @@
                 <a href="../../part2/dependent_lib.html">
             
                     
-                    2.2. 依赖库
+                    2.2. 软硬件依赖
             
                 </a>
             
@@ -147,12 +147,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../part2/lib/cblas.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../../part2/lib/cmake.html">
+            
+                <a href="../../part2/lib/cmake.html">
+            
+                    
+                    2.2.1. cmake
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../part2/lib/gcc.html">
+            
+                <a href="../../part2/lib/gcc.html">
+            
+                    
+                    2.2.2. gcc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../part2/lib/cblas.html">
             
                 <a href="../../part2/lib/cblas.html">
             
                     
-                    2.2.1. cblas
+                    2.2.3. cblas
             
                 </a>
             
@@ -160,12 +186,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../../part2/lib/lapack.html">
+        <li class="chapter " data-level="1.2.2.4" data-path="../../part2/lib/lapack.html">
             
                 <a href="../../part2/lib/lapack.html">
             
                     
-                    2.2.2. lapack
+                    2.2.4. lapack
             
                 </a>
             
@@ -173,12 +199,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" data-path="../../part2/lib/cublas.html">
+        <li class="chapter " data-level="1.2.2.5" data-path="../../part2/lib/cublas.html">
             
                 <a href="../../part2/lib/cublas.html">
             
                     
-                    2.2.3. cublas
+                    2.2.5. cublas
             
                 </a>
             
@@ -186,12 +212,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../../part2/lib/cuda.html">
+        <li class="chapter " data-level="1.2.2.6" data-path="../../part2/lib/cuda.html">
             
                 <a href="../../part2/lib/cuda.html">
             
                     
-                    2.2.4. cuda
+                    2.2.6. cuda
             
                 </a>
             
@@ -487,7 +513,7 @@
                                 
                                 <h1 id="k-nearest-neighbor">K-Nearest-Neighbor</h1>
 <h2 id="&#x7B97;&#x6CD5;&#x63CF;&#x8FF0;">&#x7B97;&#x6CD5;&#x63CF;&#x8FF0;</h2>
-<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x5BF9;&#x65B0;&#x7684;&#x8F93;&#x5165;&#x5B9E;&#x4F8B;&#xFF0C;&#x5728;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x627E;&#x5230;&#x4E0E;&#x8BE5;&#x5B9E;&#x4F8B;&#x6700;&#x90BB;&#x8FD1;&#x7684;K&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x8FD9;K&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x591A;&#x6570;&#x5C5E;&#x4E8E;&#x67D0;&#x4E2A;&#x7C7B;&#xFF0C;&#x5C31;&#x628A;&#x8BE5;&#x8F93;&#x5165;&#x5B9E;&#x4F8B;&#x5206;&#x7C7B;&#x5230;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#x3002;</p>
+<p>&#x7ED9;&#x5B9A;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x96C6;&#x7684;&#x591A;&#x7EF4;&#x7279;&#x5F81;&#x5411;&#x91CF;<code>ref</code>&#xFF0C;&#x548C;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x522B;&#x4FE1;&#x606F;<code>label</code>&#xFF0C;&#x6839;&#x636E;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x5E38;&#x6570;<code>k</code>&#x5BFB;&#x627E;&#x672A;&#x6253;&#x6807;&#x7B7E;&#x7684;&#x6D4B;&#x8BD5;&#x96C6;<code>query</code>&#x9644;&#x8FD1;&#x6700;&#x90BB;&#x8FD1;&#x7684;k&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x8FD9;k&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x591A;&#x6570;&#x5C5E;&#x4E8E;&#x67D0;&#x4E2A;&#x7C7B;&#xFF0C;&#x5C31;&#x628A;&#x8BE5;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5206;&#x5230;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#x3002;</p>
 <h2 id="&#x8BED;&#x6CD5;&#x8BF4;&#x660E;">&#x8BED;&#x6CD5;&#x8BF4;&#x660E;</h2>
 <pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x9ED8;&#x8BA4;CPU&#x6267;&#x884C;KNN</span>
 result <span class="token operator">=</span> <span class="token function">knn</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> label<span class="token punctuation">,</span> query<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -554,7 +580,7 @@ result <span class="token operator">=</span> <span class="token function">knn</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"next":{"title":"3.4. NN模块","level":"1.3.4","depth":2,"path":"part3/nn.md","ref":"part3/nn.md","articles":[]},"previous":{"title":"3.3. ML模块","level":"1.3.3","depth":2,"path":"part3/ml.md","ref":"part3/ml.md","articles":[{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"path":"part3/ml/knn.md","ref":"part3/ml/knn.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/ml/knn.md","mtime":"2018-12-12T10:16:29.729Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-12T10:16:41.063Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"next":{"title":"3.4. NN模块","level":"1.3.4","depth":2,"path":"part3/nn.md","ref":"part3/nn.md","articles":[]},"previous":{"title":"3.3. ML模块","level":"1.3.3","depth":2,"path":"part3/ml.md","ref":"part3/ml.md","articles":[{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"path":"part3/ml/knn.md","ref":"part3/ml/knn.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/ml/knn.md","mtime":"2018-12-13T07:24:15.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-13T11:12:03.258Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>

@@ -6,9 +6,9 @@ SFINAE应用最为广泛的场景是C++中的 std::enable_if。
 
 ## std::enable_if
 
-> 定义在头文件<type_traits>中。
+> 定义在头文件 `type_traits` 中。
 
-```c++
+```cpp
 // 若B为true，则std::enable_if的typedef type为T
 // 若B为false，则std::enable_if的typedef type为void
 template< bool B, class T = void >
@@ -21,7 +21,7 @@ struct enable_if;
 
 举个例子：
 
-```c++
+```cpp
 // CPU
 template< DeviceType Td, typename TScalarType,  typename TVec, typename TZeroDimTensor>
 typename std::enable_if<is_same_device<Td, DeviceType::kCPU>::value, void>::type
@@ -41,7 +41,7 @@ dotvv(.......){
 
 这样在`apply`函数中，可以直接使用
 
-```c++
+```cpp
 if (lhs.device().is_cpu()) {
         engine::dotvv<DeviceType::kCPU, TScalarType3>(lhs, rhs, result);
 } 
