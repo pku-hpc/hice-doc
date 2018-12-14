@@ -23,6 +23,7 @@ git clone https://github.com/pku-hpc/hice.git
   cd build
   cmake ..
   make
+  make install
   ```
 
 ## Test
