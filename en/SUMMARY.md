@@ -15,8 +15,6 @@
     * [3.2.3. Transpose](part3/la/transpose.md)
   * [3.3. ML Module](part3/ml.md)
     * [3.3.1. K-Nearest-Neighbor](part3/ml/knn.md)
-    * [3.2.2. Dot](part3/la/dot.md)
-    * [3.2.3. Transpose](part3/la/transpose.md)
   * [3.4. NN Module](part3/nn.md)
 * [4. Extension](part4/README.md)
   * [4.1. Add operations](part4/new-op.md)
