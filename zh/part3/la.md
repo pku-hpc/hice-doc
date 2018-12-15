@@ -5,6 +5,8 @@
 ## 已支持操作
 
 * [Spmspv](la/spmspv.md)
+* [Dot](la/dot.md)
+* [Transpose](la/transpose.md)
 
 ## 新加算法编程规范
 

@@ -5,6 +5,8 @@
 ## Operation Supported
 
 - [Spmspv](la/spmspv.md)
+- [Dot](la/dot.md)
+- [Transpose](la/transpose.md)
 
 ## Add new operations
 
