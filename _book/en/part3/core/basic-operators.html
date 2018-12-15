@@ -1,0 +1,706 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.1.2. Basic Operators · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="expression.html" />
+    
+    
+    <link rel="prev" href="tensor.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../part2/">
+            
+                <a href="../../part2/">
+            
+                    
+                    2. Install Guide
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../part2/install_step.html">
+            
+                <a href="../../part2/install_step.html">
+            
+                    
+                    2.1. Download and Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../part2/dependent_lib.html">
+            
+                <a href="../../part2/dependent_lib.html">
+            
+                    
+                    2.2. Hardware and software dependent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    3. Modules
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../core.html">
+            
+                <a href="../core.html">
+            
+                    
+                    3.1. CORE Module
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="tensor.html">
+            
+                <a href="tensor.html">
+            
+                    
+                    3.1.1. Tensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.2" data-path="basic-operators.html">
+            
+                <a href="basic-operators.html">
+            
+                    
+                    3.1.2. Basic Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="expression.html">
+            
+                <a href="expression.html">
+            
+                    
+                    3.1.3. Expression
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../la.html">
+            
+                <a href="../la.html">
+            
+                    
+                    3.2. LA Module
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../la/spmspv.html">
+            
+                <a href="../la/spmspv.html">
+            
+                    
+                    3.2.1. Spmspv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../la/dot.html">
+            
+                <a href="../la/dot.html">
+            
+                    
+                    3.2.2. Dot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../la/transpose.html">
+            
+                <a href="../la/transpose.html">
+            
+                    
+                    3.2.3. Transpose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../ml.html">
+            
+                <a href="../ml.html">
+            
+                    
+                    3.3. ML Module
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../ml/knn.html">
+            
+                <a href="../ml/knn.html">
+            
+                    
+                    3.3.1. K-Nearest-Neighbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../la/dot.html">
+            
+                <a href="../la/dot.html">
+            
+                    
+                    3.2.2. Dot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../la/transpose.html">
+            
+                <a href="../la/transpose.html">
+            
+                    
+                    3.2.3. Transpose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../nn.html">
+            
+                <a href="../nn.html">
+            
+                    
+                    3.4. NN Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../part4/">
+            
+                <a href="../../part4/">
+            
+                    
+                    4. Extension
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../part4/new-op.html">
+            
+                <a href="../../part4/new-op.html">
+            
+                    
+                    4.1. Add operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../part4/test-op.html">
+            
+                <a href="../../part4/test-op.html">
+            
+                    
+                    4.2 Test operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../part5/">
+            
+                <a href="../../part5/">
+            
+                    
+                    5. General Technology
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../part5/Traits.html">
+            
+                <a href="../../part5/Traits.html">
+            
+                    
+                    5.1. Traits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../part5/SFINAE.html">
+            
+                <a href="../../part5/SFINAE.html">
+            
+                    
+                    5.2. SFINAE+enable_if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../part5/Expression_Template.html">
+            
+                <a href="../../part5/Expression_Template.html">
+            
+                    
+                    5.3. Expression Template
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >3.1.2. Basic Operators</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bisic-operators">Bisic-Operators</h1>
+<h2 id="unary-operators--support-cpu-and-gpu-">Unary Operators ( Support CPU and GPU )</h2>
+<ul>
+<li><p>Absolute value&#xFF1A;element-wise </p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// shape of &apos;result&apos; should be same with &apos;tensor&apos;</span>
+result <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Negative&#xFF1A;element-wise </p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// shape of &apos;result&apos; should be same with &apos;tensor&apos;</span>
+result <span class="token operator">=</span> <span class="token operator">-</span>tensor<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="binary-operators--support-cpu-and-gpu-">Binary Operators ( Support CPU and GPU )</h2>
+<ul>
+<li><p>Add&#xFF1A;element-wise </p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// between tensor and tensor</span>
+<span class="token comment">// shape of &apos;result&apos;, &apos;tensor_a&apos; and &apos;tensor_b&apos; should be same.</span>
+result <span class="token operator">=</span> tensor_a <span class="token operator">+</span> tensor_b<span class="token punctuation">;</span>
+
+<span class="token comment">// between tensor&lt;dim=n&gt; and tensor&lt;dim=0&gt; is ok, tensor&lt;dim=0&gt; will be broadcasted.</span>
+result <span class="token operator">=</span> tensor_nd <span class="token operator">+</span> tensor_0d<span class="token punctuation">;</span>    
+
+<span class="token comment">// between tensor&lt;dim=0&gt; and tensor&lt;dim=n&gt; is ok, tensor&lt;dim=0&gt; will be broadcasted.</span>
+result <span class="token operator">=</span> tensor_0d <span class="token operator">+</span> tensor_nd<span class="token punctuation">;</span>    
+
+<span class="token comment">// between tensor and scalar</span>
+<span class="token comment">// type of &apos;scalar&apos; should be same with the datatype of &apos;tensor_a&apos;.</span>
+<span class="token keyword">double</span><span class="token operator">/</span><span class="token keyword">int</span><span class="token operator">/</span><span class="token keyword">float</span> scalar <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+result <span class="token operator">=</span> tensor_a <span class="token operator">+</span> scalar<span class="token punctuation">;</span>
+
+<span class="token comment">// !!! operator between scalar and tensor is not support.</span>
+<span class="token comment">// !!! compile error if you put the following code into compiler.</span>
+<span class="token keyword">double</span><span class="token operator">/</span><span class="token keyword">int</span><span class="token operator">/</span><span class="token keyword">float</span> scalar <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+result <span class="token operator">=</span> scalar <span class="token operator">+</span> tensor_a<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Subtraction&#xFF1A;element-wise, same usage with &apos;Add&apos;.</p>
+<pre class="language-"><code class="lang-cpp">result <span class="token operator">=</span> tensor_a <span class="token operator">-</span> tensor_b<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>Multiplication&#xFF1A;element-wise, same usage with &apos;Add&apos;.</p>
+<pre class="language-"><code class="lang-cpp">result <span class="token operator">=</span> tensor_a <span class="token operator">*</span> tensor_b<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Division&#xFF1A;element-wise, same usage with &apos;Add&apos;.</p>
+<pre class="language-"><code class="lang-cpp">result <span class="token operator">=</span> tensor_a <span class="token operator">/</span> tensor_b<span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>Residual&#xFF1A;not supported for now.</li>
+</ul>
+<h2 id="reduce-operators--only-support-cpu">Reduce Operators ( Only support CPU)</h2>
+<ul>
+<li><p>Maximum&#xFF1A;return the maximum element of a tensor.</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &apos;result_0d&apos; should be a zero-dim-tensor.</span>
+<span class="token comment">// the datatype of &apos;result_0d&apos;&apos; should be same with &apos;tensor&apos;&apos;.</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">&gt;</span> result_0d<span class="token punctuation">;</span>
+result_0d <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">maximum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Minimum&#xFF1A;return the minimum element of a tensor.</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &apos;result_0d&apos; should be a zero-dim-tensor.</span>
+<span class="token comment">// the datatype of &apos;result_0d&apos;&apos; should be same with &apos;tensor&apos;&apos;.</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">&gt;</span> result_0d<span class="token punctuation">;</span>
+result_0d <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">minimum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Mean&#xFF1A;return the average value of a tensor.</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &apos;result_0d&apos; should be a zero-dim-tensor.</span>
+<span class="token comment">// the datatype of &apos;result_0d&apos;&apos; should be same with &apos;tensor&apos;&apos;.</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">&gt;</span> result_0d<span class="token punctuation">;</span>
+result_0d <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">mean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Sum&#xFF1A;return the sum of all element in a tensor.</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &apos;result_0d&apos; should be a zero-dim-tensor.</span>
+<span class="token comment">// the datatype of &apos;result_0d&apos;&apos; should be same with &apos;tensor&apos;&apos;.</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">&gt;</span> result_0d<span class="token punctuation">;</span>
+result_0d <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Norm1&#xFF1A;consider the tensor as a vector, and return its norm1.</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &apos;result_0d&apos; should be a zero-dim-tensor.</span>
+<span class="token comment">// the datatype of &apos;result_0d&apos;&apos; should be same with &apos;tensor&apos;&apos;.</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">&gt;</span> result_0d<span class="token punctuation">;</span>
+result_0d <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">norm1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>Norm2&#xFF1A;consider the tensor as a vector, and return its norm2.</p>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &apos;result_0d&apos; should be a zero-dim-tensor.</span>
+<span class="token comment">// the datatype of &apos;result_0d&apos;&apos; should be same with &apos;tensor&apos;&apos;.</span>
+Tensor<span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">&gt;</span> result_0d<span class="token punctuation">;</span>
+result_0d <span class="token operator">=</span> tensor<span class="token punctuation">.</span><span class="token function">norm2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tensor.html" class="navigation navigation-prev " aria-label="Previous page: 3.1.1. Tensor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="expression.html" class="navigation navigation-next " aria-label="Next page: 3.1.3. Expression">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.1.2. Basic Operators","level":"1.3.1.2","depth":3,"next":{"title":"3.1.3. Expression","level":"1.3.1.3","depth":3,"path":"part3/core/expression.md","ref":"part3/core/expression.md","articles":[]},"previous":{"title":"3.1.1. Tensor","level":"1.3.1.1","depth":3,"path":"part3/core/tensor.md","ref":"part3/core/tensor.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/core/basic-operators.md","mtime":"2018-12-15T11:35:23.172Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-15T11:29:24.092Z"},"basePath":"../..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
