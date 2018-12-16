@@ -1,4 +1,4 @@
-# Bisic-Operators (基础操作)
+# Basic-Operators (基础操作)
 
 ## 一元运算（支持CPU和GPU）
 

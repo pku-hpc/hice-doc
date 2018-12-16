@@ -1,4 +1,4 @@
-# Bisic-Operators
+# Basic-Operators
 
 ## Unary Operators ( Support CPU and GPU )
 
