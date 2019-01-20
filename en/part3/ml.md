@@ -5,6 +5,7 @@
 ## Algorithm Supported
 
 * [K-Nearest-Neighbor](ml/knn.md)
+* [Support-Vector-Machine](ml/svm.md)
 
 ## Add new algorithms
 

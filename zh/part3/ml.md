@@ -5,6 +5,7 @@
 ## 已支持算法
 
 * [K-Nearest-Neighbor](ml/knn.md)
+* [Support-Vector-Machine](ml/svm.md)
 
 ## 新加算法编程规范
 
