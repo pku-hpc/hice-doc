@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="en" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>3.3.1. K-Nearest-Neighbor · GitBook</title>
+        <title>3.3.2. Support-Vector-Machine · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="svm.html" />
+    <link rel="next" href="../nn.html" />
     
     
-    <link rel="prev" href="../ml.html" />
+    <link rel="prev" href="knn.html" />
     
 
     </head>
@@ -75,7 +75,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -98,7 +98,7 @@
                 <a href="../../">
             
                     
-                    1. Introduction
+                    1. 基本介绍
             
                 </a>
             
@@ -111,7 +111,7 @@
                 <a href="../../part2/">
             
                     
-                    2. Install Guide
+                    2. 安装指南
             
                 </a>
             
@@ -125,7 +125,7 @@
                 <a href="../../part2/install_step.html">
             
                     
-                    2.1. Download and Install
+                    2.1. 下载与安装
             
                 </a>
             
@@ -138,7 +138,7 @@
                 <a href="../../part2/dependent_lib.html">
             
                     
-                    2.2. Hardware and software dependent
+                    2.2. 软硬件依赖
             
                 </a>
             
@@ -156,7 +156,7 @@
                 <a href="../">
             
                     
-                    3. Modules
+                    3. 功能说明
             
                 </a>
             
@@ -170,7 +170,7 @@
                 <a href="../core.html">
             
                     
-                    3.1. CORE Module
+                    3.1. CORE模块
             
                 </a>
             
@@ -184,7 +184,7 @@
                 <a href="../core/tensor.html">
             
                     
-                    3.1.1. Tensor
+                    3.1.1. 张量
             
                 </a>
             
@@ -197,7 +197,7 @@
                 <a href="../core/expression.html">
             
                     
-                    3.1.2. Expression
+                    3.1.2. 表达式
             
                 </a>
             
@@ -210,7 +210,7 @@
                 <a href="../core/basic-operators.html">
             
                     
-                    3.1.3. Basic Operators
+                    3.1.3. 基础运算
             
                 </a>
             
@@ -228,7 +228,7 @@
                 <a href="../la.html">
             
                     
-                    3.2. LA Module
+                    3.2. LA模块
             
                 </a>
             
@@ -286,7 +286,7 @@
                 <a href="../ml.html">
             
                     
-                    3.3. ML Module
+                    3.3. ML模块
             
                 </a>
             
@@ -295,7 +295,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.3.1" data-path="knn.html">
+        <li class="chapter " data-level="1.3.3.1" data-path="knn.html">
             
                 <a href="knn.html">
             
@@ -308,7 +308,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3.2" data-path="svm.html">
+        <li class="chapter active" data-level="1.3.3.2" data-path="svm.html">
             
                 <a href="svm.html">
             
@@ -331,7 +331,7 @@
                 <a href="../nn.html">
             
                     
-                    3.4. NN Module
+                    3.4. NN模块
             
                 </a>
             
@@ -349,7 +349,7 @@
                 <a href="../../part4/">
             
                     
-                    4. Extension
+                    4. 自定义扩展
             
                 </a>
             
@@ -363,7 +363,7 @@
                 <a href="../../part4/new-op.html">
             
                     
-                    4.1. Add operations
+                    4.1. 增加自定义operation
             
                 </a>
             
@@ -376,7 +376,7 @@
                 <a href="../../part4/test-op.html">
             
                     
-                    4.2 Test operations
+                    4.2 测试自定义operation
             
                 </a>
             
@@ -394,7 +394,7 @@
                 <a href="../../part5/">
             
                     
-                    5. General Technology
+                    5. 通用技术
             
                 </a>
             
@@ -454,7 +454,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -477,7 +477,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >3.3.1. K-Nearest-Neighbor</a>
+        <a href="../.." >3.3.2. Support-Vector-Machine</a>
     </h1>
 </div>
 
@@ -492,30 +492,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="k-nearest-neighbor">K-Nearest-Neighbor</h1>
-<h2 id="algorithm-description">Algorithm description</h2>
-<p>The training examples are vectors in a multidimensional feature space named <code>ref</code>, each with a class label named <code>label</code>. The training phase of the algorithm consists only of storing the feature vectorsand class labels of the training samples.In the classification phase, <code>k</code> is a user-defined constant, and unlabeled vectors <code>query</code> is classified by assigning the label which is most frequent among the <code>k</code> training samples nearest to that query point.</p>
-<h2 id="usage">Usage</h2>
-<pre class="language-"><code class="lang-cpp"><span class="token comment">// default run on CPU</span>
-result <span class="token operator">=</span> <span class="token function">knn</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> label<span class="token punctuation">,</span> query<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// Use GPU speed up</span>
-result <span class="token operator">=</span> <span class="token function">knn</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> label<span class="token punctuation">,</span> query<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span>CUDA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                <h1 id="support-vector-machine">Support-Vector-Machine</h1>
+<h2 id="&#x7B97;&#x6CD5;&#x63CF;&#x8FF0;">&#x7B97;&#x6CD5;&#x63CF;&#x8FF0;</h2>
+<p>&#x652F;&#x6491;&#x5411;&#x91CF;&#x673A;&#x662F;&#x4E00;&#x79CD;&#x4E8C;&#x5206;&#x7C7B;&#x6A21;&#x578B;&#xFF0C;&#x5B83;&#x7684;&#x57FA;&#x672C;&#x6A21;&#x578B;&#x662F;&#x5B9A;&#x4E49;&#x5728;&#x7279;&#x5F81;&#x7A7A;&#x95F4;&#x4E0A;&#x7684;&#x95F4;&#x9694;&#x6700;&#x5927;&#x7684;&#x7EBF;&#x6027;&#x5206;&#x7C7B;&#x5668;&#xFF0C;&#x7ED3;&#x5408;&#x6838;&#x6280;&#x5DE7;&#xFF0C;&#x5B9E;&#x8D28;&#x4E0A;&#x4E3A;&#x4E00;&#x4E2A;&#x975E;&#x7EBF;&#x6027;&#x5206;&#x7C7B;&#x5668;&#x3002;&#x672C;&#x8D28;&#x7684;&#x6570;&#x5B66;&#x95EE;&#x9898;&#x4E3A;&#x6C42;&#x89E3;&#x51F8;&#x4E8C;&#x6B21;&#x89C4;&#x5212;&#x7684;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x3002;&#x5C06;&#x539F;&#x59CB;&#x7684;&#x6700;&#x4F18;&#x5316;&#x95EE;&#x9898;&#x901A;&#x8FC7;&#x62C9;&#x683C;&#x6717;&#x65E5;&#x5BF9;&#x5076;&#x6027;&#x8F6C;&#x5316;&#x4E3A;&#x5BF9;&#x5076;&#x95EE;&#x9898;&#xFF0C;&#x518D;&#x5E94;&#x7528;&#x5E8F;&#x5217;&#x6700;&#x5C0F;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;SMO&#x7B97;&#x6CD5;&#x6C42;&#x89E3;&#x5373;&#x53EF;&#x5F97;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x3002;</p>
+<h2 id="&#x8BED;&#x6CD5;&#x8BF4;&#x660E;">&#x8BED;&#x6CD5;&#x8BF4;&#x660E;</h2>
+<pre class="language-"><code class="lang-cpp"><span class="token comment">// &#x9ED8;&#x8BA4;CPU&#x6267;&#x884C;KNN</span>
+result <span class="token operator">=</span> <span class="token function">svm</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> label<span class="token punctuation">,</span> query<span class="token punctuation">,</span> c<span class="token punctuation">,</span>g<span class="token punctuation">,</span>svm_type<span class="token punctuation">,</span>kernel_type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x7528;CUDA&#x52A0;&#x901F;&#x6267;&#x884C;KNN</span>
+result <span class="token operator">=</span> <span class="token function">svm</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> label<span class="token punctuation">,</span> query<span class="token punctuation">,</span> c<span class="token punctuation">,</span>g<span class="token punctuation">,</span>svm_type<span class="token punctuation">,</span>kernel_type<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span>CUDA<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="parameter">Parameter</h3>
+<h3 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h3>
 <ul>
-<li><code>ref</code>&#xFF1A;Features for training dataset&#xFF0C;a tensor shape as <code>(ref_num, dim)</code>.</li>
-<li><code>label</code>&#xFF1A;Labels for training dataset&#xFF0C;a tensor shape as <code>(ref_num, 1)</code>.</li>
-<li><code>query</code>&#xFF1A;Features for test dataset&#xFF0C;a tensor shape as <code>(query_num, dim)</code>.</li>
-<li><code>k</code>&#xFF1A;Select the nearest <code>k</code> points.</li>
+<li><code>ref</code>&#xFF1A;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x7279;&#x5F81;&#xFF0C;<code>(ref_num, dim)</code>&#x7684;&#x5F20;&#x91CF;&#x3002;</li>
+<li><code>label</code>&#xFF1A;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x7C7B;&#x522B;&#x6807;&#x7B7E;&#xFF0C;<code>(ref_num, 1)</code>&#x7684;&#x5F20;&#x91CF;&#x3002;</li>
+<li><code>query</code>&#xFF1A;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x96C6;&#x7279;&#x5F81;&#xFF0C;<code>(query_num, dim)</code>&#x7684;&#x5F20;&#x91CF;&#x3002;</li>
+<li><code>c</code>&#xFF1A;&#x60E9;&#x7F5A;&#x53C2;&#x6570;C&#x3002;</li>
+<li><code>g</code>&#xFF1A;&#x6838;&#x53C2;&#x6570;gamma&#x3002;</li>
+<li><code>svm_type</code>&#xFF1A;0:&#x591A;&#x5206;&#x7C7B;svc 1:&#x56DE;&#x5F52;svr&#x3002;</li>
+<li><code>kernel_type</code>&#xFF1A;0:LINEAR, 1:POLY, 2&#xFF1A;RBF, 3&#xFF1A;SIGMOID,&#x3002;</li>
 </ul>
-<h3 id="return">Return</h3>
+<h3 id="&#x8FD4;&#x56DE;&#x503C;">&#x8FD4;&#x56DE;&#x503C;</h3>
 <ul>
-<li><code>result</code>&#xFF1A;Labels for test dataset&#xFF0C;a tensor shape as <code>(query_num, 1)</code>.</li>
+<li><code>result</code>&#xFF1A;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x7C7B;&#x522B;&#x6807;&#x7B7E;&#xFF0C;<code>(query_num, 1)</code>&#x7684;&#x5F20;&#x91CF;</li>
 </ul>
-<h2 id="performance">Performance</h2>
+<h2 id="&#x6027;&#x80FD;&#x6D4B;&#x8BD5;">&#x6027;&#x80FD;&#x6D4B;&#x8BD5;</h2>
 <ul>
-<li><p>Running time of each parts</p>
-<p><img src="../images/knn/knn-time.png" alt="&#x56FE;1 &#x5B9E;&#x9A8C;&#x6570;&#x636E;"></p>
+<li><p>CPU/GPU&#x8FD0;&#x884C;&#x65F6;&#x95F4;</p>
+<p><img src="../images/svm/svm-time.png" alt="&#x56FE;1 &#x5B9E;&#x9A8C;&#x6570;&#x636E;"></p>
 </li>
 </ul>
 
@@ -545,12 +548,12 @@ result <span class="token operator">=</span> <span class="token function">knn</s
 
             
                 
-                <a href="../ml.html" class="navigation navigation-prev " aria-label="Previous page: 3.3. ML Module">
+                <a href="knn.html" class="navigation navigation-prev " aria-label="Previous page: 3.3.1. K-Nearest-Neighbor">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="svm.html" class="navigation navigation-next " aria-label="Next page: 3.3.2. Support-Vector-Machine">
+                <a href="../nn.html" class="navigation navigation-next " aria-label="Next page: 3.4. NN模块">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -561,7 +564,7 @@ result <span class="token operator">=</span> <span class="token function">knn</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"next":{"title":"3.3.2. Support-Vector-Machine","level":"1.3.3.2","depth":3,"path":"part3/ml/svm.md","ref":"part3/ml/svm.md","articles":[]},"previous":{"title":"3.3. ML Module","level":"1.3.3","depth":2,"path":"part3/ml.md","ref":"part3/ml.md","articles":[{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"path":"part3/ml/knn.md","ref":"part3/ml/knn.md","articles":[]},{"title":"3.3.2. Support-Vector-Machine","level":"1.3.3.2","depth":3,"path":"part3/ml/svm.md","ref":"part3/ml/svm.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"part3/ml/knn.md","mtime":"2019-01-20T09:55:47.848Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T11:12:18.247Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"3.3.2. Support-Vector-Machine","level":"1.3.3.2","depth":3,"next":{"title":"3.4. NN模块","level":"1.3.4","depth":2,"path":"part3/nn.md","ref":"part3/nn.md","articles":[]},"previous":{"title":"3.3.1. K-Nearest-Neighbor","level":"1.3.3.1","depth":3,"path":"part3/ml/knn.md","ref":"part3/ml/knn.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","prism","-highlight","include-codeblock"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism.css"]},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh-hans","gitbook":"*"},"file":{"path":"part3/ml/svm.md","mtime":"2019-01-20T09:55:47.877Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T11:12:18.247Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
